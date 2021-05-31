@@ -90,7 +90,6 @@ namespace CalculationOfSeniority
             this.but_1.TabIndex = 3;
             this.but_1.Text = "Добавить";
             this.but_1.UseVisualStyleBackColor = true;
-            this.but_1.Click += new System.EventHandler(this.but_1_Click);
             // 
             // but_2
             // 
@@ -100,7 +99,6 @@ namespace CalculationOfSeniority
             this.but_2.TabIndex = 4;
             this.but_2.Text = "Удалить";
             this.but_2.UseVisualStyleBackColor = true;
-            this.but_2.Click += new System.EventHandler(this.but_2_Click);
             // 
             // but_3
             // 
@@ -119,7 +117,6 @@ namespace CalculationOfSeniority
             this.but_4.TabIndex = 6;
             this.but_4.Text = "О программе";
             this.but_4.UseVisualStyleBackColor = true;
-            this.but_4.Click += new System.EventHandler(this.but_4_Click);
             // 
             // but_5
             // 
@@ -175,7 +172,6 @@ namespace CalculationOfSeniority
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Seniority";
             this.Text = "Расчет стажа";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.gb_1.ResumeLayout(false);
             this.gb_2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -16,9 +16,9 @@ namespace CalculationOfSeniority
         public Seniority()
         {
             InitializeComponent();
-            Loadlat();
+            ConnectionToDb();
         }
-        private void Loadlat()
+        private void ConnectionToDb()
         {
             string conStr = @"Data Source=SERGEEV;Initial Catalog=master;User Id = sa; Password = 123";
 
@@ -35,26 +35,6 @@ namespace CalculationOfSeniority
             dataAdp.Fill(dt);
             dataGridView1.DataSource = dt.DefaultView; // Сам вывод 
             connection.Close();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void but_2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void but_1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void but_4_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
