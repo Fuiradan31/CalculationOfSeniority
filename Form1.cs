@@ -26,7 +26,7 @@ namespace CalculationOfSeniority
 
             connection.Open();
 
-            string sql = "select * from Seniority";
+            string sql = "select DateBegin as [Дата начала] from Seniority";
 
             SqlCommand createCommand = new SqlCommand(sql, connection);
             createCommand.ExecuteNonQuery();
