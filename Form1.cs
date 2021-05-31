@@ -51,5 +51,10 @@ namespace CalculationOfSeniority
         {
 
         }
+
+        private void but_4_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -119,6 +119,7 @@ namespace CalculationOfSeniority
             this.but_4.TabIndex = 6;
             this.but_4.Text = "О программе";
             this.but_4.UseVisualStyleBackColor = true;
+            this.but_4.Click += new System.EventHandler(this.but_4_Click);
             // 
             // but_5
             // 
