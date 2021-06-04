@@ -20,13 +20,13 @@ namespace CalculationOfSeniority
         }
         private void ConnectionToDb()
         {
-            string conStr = @"Data Source=SERGEEV;Initial Catalog=master;User Id = sa; Password = 123";
+            string conStr = @"Data Source=SERGEEV\SERGEEV;Initial Catalog=master;User Id = sa; Password = 123";
 
             SqlConnection connection = new SqlConnection(conStr);
 
             connection.Open();
 
-            string sql = "select DateBegin as [Дата начала] from Seniority";
+            string sql = "select DateBegin as [Дата начала], DateEnd as [Дата конец], WorkExperience as [Стаж] from  Seniority";
 
             SqlCommand createCommand = new SqlCommand(sql, connection);
             createCommand.ExecuteNonQuery();
