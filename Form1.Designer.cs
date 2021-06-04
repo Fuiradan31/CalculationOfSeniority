@@ -29,16 +29,16 @@ namespace CalculationOfSeniority
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gb_1 = new System.Windows.Forms.GroupBox();
             this.dtp_1 = new System.Windows.Forms.DateTimePicker();
             this.gb_2 = new System.Windows.Forms.GroupBox();
             this.dtp_2 = new System.Windows.Forms.DateTimePicker();
-            this.but_1 = new System.Windows.Forms.Button();
-            this.but_2 = new System.Windows.Forms.Button();
-            this.but_3 = new System.Windows.Forms.Button();
-            this.but_4 = new System.Windows.Forms.Button();
-            this.but_5 = new System.Windows.Forms.Button();
+            this.Add_button = new System.Windows.Forms.Button();
+            this.Delete_button = new System.Windows.Forms.Button();
+            this.Print_button = new System.Windows.Forms.Button();
+            this.About_button = new System.Windows.Forms.Button();
+            this.Close_button = new System.Windows.Forms.Button();
             this.gb_3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gb_1.SuspendLayout();
@@ -82,50 +82,50 @@ namespace CalculationOfSeniority
             this.dtp_2.Size = new System.Drawing.Size(120, 27);
             this.dtp_2.TabIndex = 0;
             // 
-            // but_1
+            // Add_button
             // 
-            this.but_1.Location = new System.Drawing.Point(634, 26);
-            this.but_1.Name = "but_1";
-            this.but_1.Size = new System.Drawing.Size(148, 40);
-            this.but_1.TabIndex = 3;
-            this.but_1.Text = "Добавить";
-            this.but_1.UseVisualStyleBackColor = true;
+            this.Add_button.Location = new System.Drawing.Point(634, 26);
+            this.Add_button.Name = "Add_button";
+            this.Add_button.Size = new System.Drawing.Size(148, 40);
+            this.Add_button.TabIndex = 3;
+            this.Add_button.Text = "Добавить";
+            this.Add_button.UseVisualStyleBackColor = true;
             // 
-            // but_2
+            // Delete_button
             // 
-            this.but_2.Location = new System.Drawing.Point(634, 81);
-            this.but_2.Name = "but_2";
-            this.but_2.Size = new System.Drawing.Size(148, 40);
-            this.but_2.TabIndex = 4;
-            this.but_2.Text = "Удалить";
-            this.but_2.UseVisualStyleBackColor = true;
+            this.Delete_button.Location = new System.Drawing.Point(634, 81);
+            this.Delete_button.Name = "Delete_button";
+            this.Delete_button.Size = new System.Drawing.Size(148, 40);
+            this.Delete_button.TabIndex = 4;
+            this.Delete_button.Text = "Удалить";
+            this.Delete_button.UseVisualStyleBackColor = true;
             // 
-            // but_3
+            // Print_button
             // 
-            this.but_3.Location = new System.Drawing.Point(634, 127);
-            this.but_3.Name = "but_3";
-            this.but_3.Size = new System.Drawing.Size(148, 40);
-            this.but_3.TabIndex = 5;
-            this.but_3.Text = "Печать";
-            this.but_3.UseVisualStyleBackColor = true;
+            this.Print_button.Location = new System.Drawing.Point(634, 127);
+            this.Print_button.Name = "Print_button";
+            this.Print_button.Size = new System.Drawing.Size(148, 40);
+            this.Print_button.TabIndex = 5;
+            this.Print_button.Text = "Печать";
+            this.Print_button.UseVisualStyleBackColor = true;
             // 
-            // but_4
+            // About_button
             // 
-            this.but_4.Location = new System.Drawing.Point(634, 361);
-            this.but_4.Name = "but_4";
-            this.but_4.Size = new System.Drawing.Size(148, 40);
-            this.but_4.TabIndex = 6;
-            this.but_4.Text = "О программе";
-            this.but_4.UseVisualStyleBackColor = true;
+            this.About_button.Location = new System.Drawing.Point(634, 361);
+            this.About_button.Name = "About_button";
+            this.About_button.Size = new System.Drawing.Size(148, 40);
+            this.About_button.TabIndex = 6;
+            this.About_button.Text = "О программе";
+            this.About_button.UseVisualStyleBackColor = true;
             // 
-            // but_5
+            // Close_button
             // 
-            this.but_5.Location = new System.Drawing.Point(634, 463);
-            this.but_5.Name = "but_5";
-            this.but_5.Size = new System.Drawing.Size(148, 40);
-            this.but_5.TabIndex = 7;
-            this.but_5.Text = "Закрыть";
-            this.but_5.UseVisualStyleBackColor = true;
+            this.Close_button.Location = new System.Drawing.Point(634, 463);
+            this.Close_button.Name = "Close_button";
+            this.Close_button.Size = new System.Drawing.Size(148, 40);
+            this.Close_button.TabIndex = 7;
+            this.Close_button.Text = "Закрыть";
+            this.Close_button.UseVisualStyleBackColor = true;
             // 
             // gb_3
             // 
@@ -140,14 +140,14 @@ namespace CalculationOfSeniority
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(18, 82);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -162,11 +162,11 @@ namespace CalculationOfSeniority
             this.ClientSize = new System.Drawing.Size(799, 518);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gb_3);
-            this.Controls.Add(this.but_5);
-            this.Controls.Add(this.but_4);
-            this.Controls.Add(this.but_3);
-            this.Controls.Add(this.but_2);
-            this.Controls.Add(this.but_1);
+            this.Controls.Add(this.Close_button);
+            this.Controls.Add(this.About_button);
+            this.Controls.Add(this.Print_button);
+            this.Controls.Add(this.Delete_button);
+            this.Controls.Add(this.Add_button);
             this.Controls.Add(this.gb_2);
             this.Controls.Add(this.gb_1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -183,11 +183,11 @@ namespace CalculationOfSeniority
         private System.Windows.Forms.GroupBox gb_1;
         private System.Windows.Forms.GroupBox gb_2;
         private System.Windows.Forms.DateTimePicker dtp_2;
-        private System.Windows.Forms.Button but_1;
-        private System.Windows.Forms.Button but_2;
-        private System.Windows.Forms.Button but_3;
-        private System.Windows.Forms.Button but_4;
-        private System.Windows.Forms.Button but_5;
+        private System.Windows.Forms.Button Add_button;
+        private System.Windows.Forms.Button Delete_button;
+        private System.Windows.Forms.Button Print_button;
+        private System.Windows.Forms.Button About_button;
+        private System.Windows.Forms.Button Close_button;
         private System.Windows.Forms.GroupBox gb_3;
         private System.Windows.Forms.DateTimePicker dtp_1;
         private System.Windows.Forms.DataGridView dataGridView1;
