@@ -13,55 +13,48 @@ namespace CalculationOfSeniority
 {
     public partial class Seniority : Form
     {
+        SqlConnection connection;
+        SqlCommand cmd;
+
         public Seniority()
         {
+            CreateSqlConnection();
             InitializeComponent();
-            ConnectionToDb();
-        }
-        private void Add_button_Click(object sender, EventArgs e)
-        {
-            string conStr = @"Data Source=SERGEEV\SERGEEV;Initial Catalog=master;User Id = sa; Password = 123";
-
-            SqlConnection connection = new SqlConnection(conStr);
-
-            connection.Open();
-
-            ////string sql = "select DateBegin as [Дата начала], DateEnd as [Дата конец], WorkExperience as [Стаж] from  Seniority";
-
-            string sql = "INSERT INTO [Seniority] (DateBegin, DateEnd, WorkExperience) VALUES (@DateBegin, @DateEnd, @WorkExperience)";
-
-            SqlCommand createCommand = new SqlCommand(sql, connection);
-
-            createCommand.Parameters.AddWithValue("@DateBegin", DateBegin.Value.ToString()); //или без ToString();
-            createCommand.Parameters.AddWithValue("@DateEnd", DateEnd.Value.ToString()); //или без ToString();
-            createCommand.Parameters.AddWithValue("@WorkExperience", DateEnd.Value.ToString()); //или без ToString();
-
-            createCommand.ExecuteNonQuery();
-
         }
 
-        private void ConnectionToDb()
+        private void CreateSqlConnection()
         {
-            string conStr = @"Data Source=SERGEEV\SERGEEV;Initial Catalog=master;User Id = sa; Password = 123";
-
-            SqlConnection connection = new SqlConnection(conStr);
-
+            string conStr = @"Data Source=SERGEEV\nikita;Initial Catalog=master;User Id = sa; Password = 123";
+            connection = new SqlConnection(conStr);
             connection.Open();
+            cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = connection;
+        }
 
-            string sql = "select DateBegin as [Дата начала], DateEnd as [Дата конец], WorkExperience as [Стаж] from  Seniority";
-
+        private void Seniority_Load(object sender, EventArgs e)
+        {
+            string sql = "select DateBegin as [Дата начала], DateEnd as [Дата окончания] from  Seniority";
             SqlCommand createCommand = new SqlCommand(sql, connection);
             createCommand.ExecuteNonQuery();
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
             DataTable dt = new DataTable("Seniority"); // В скобках указываем название таблицы
             dataAdp.Fill(dt);
             DateBase.DataSource = dt.DefaultView; // Сам вывод 
-            connection.Close();
+       
+        }
+        private void Add_button_Click(object sender, EventArgs e)
+        {
+            cmd.CommandText = $"INSERT into [Seniority] (DateBegin, DateEnd) VALUES " +
+            $"(convert(date,'{DateBegin.Value.ToShortDateString()}',104), " +
+            $"convert(date,'{DateEnd.Value.ToShortDateString()}',104))";
+            cmd.ExecuteNonQuery();
+            Seniority_Load(sender, e);
         }
 
-        private void Delete_button_Click(object sender, EventArgs e)
+        private void Refresh_button_Click(object sender, EventArgs e)
         {
+            Seniority_Load(sender, e);
         }
     }
-
 }

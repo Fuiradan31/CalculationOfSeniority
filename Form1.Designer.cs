@@ -42,6 +42,7 @@ namespace CalculationOfSeniority
             this.Close_button = new System.Windows.Forms.Button();
             this.gb_3 = new System.Windows.Forms.GroupBox();
             this.DateBase = new System.Windows.Forms.DataGridView();
+            this.Refresh_button = new System.Windows.Forms.Button();
             this.gb_1.SuspendLayout();
             this.gb_2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DateBase)).BeginInit();
@@ -85,7 +86,7 @@ namespace CalculationOfSeniority
             // 
             // Add_button
             // 
-            this.Add_button.Location = new System.Drawing.Point(634, 26);
+            this.Add_button.Location = new System.Drawing.Point(634, 82);
             this.Add_button.Name = "Add_button";
             this.Add_button.Size = new System.Drawing.Size(148, 40);
             this.Add_button.TabIndex = 3;
@@ -95,17 +96,16 @@ namespace CalculationOfSeniority
             // 
             // Delete_button
             // 
-            this.Delete_button.Location = new System.Drawing.Point(634, 81);
+            this.Delete_button.Location = new System.Drawing.Point(634, 128);
             this.Delete_button.Name = "Delete_button";
             this.Delete_button.Size = new System.Drawing.Size(148, 40);
             this.Delete_button.TabIndex = 4;
             this.Delete_button.Text = "Удалить";
             this.Delete_button.UseVisualStyleBackColor = true;
-            this.Delete_button.Click += new System.EventHandler(this.Delete_button_Click);
             // 
             // Print_button
             // 
-            this.Print_button.Location = new System.Drawing.Point(634, 127);
+            this.Print_button.Location = new System.Drawing.Point(634, 315);
             this.Print_button.Name = "Print_button";
             this.Print_button.Size = new System.Drawing.Size(148, 40);
             this.Print_button.TabIndex = 5;
@@ -166,11 +166,22 @@ namespace CalculationOfSeniority
             this.DateBase.Size = new System.Drawing.Size(600, 319);
             this.DateBase.TabIndex = 9;
             // 
+            // Refresh_button
+            // 
+            this.Refresh_button.Location = new System.Drawing.Point(634, 26);
+            this.Refresh_button.Name = "Refresh_button";
+            this.Refresh_button.Size = new System.Drawing.Size(148, 40);
+            this.Refresh_button.TabIndex = 10;
+            this.Refresh_button.Text = "Обновить";
+            this.Refresh_button.UseVisualStyleBackColor = true;
+            this.Refresh_button.Click += new System.EventHandler(this.Refresh_button_Click);
+            // 
             // Seniority
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 518);
+            this.Controls.Add(this.Refresh_button);
             this.Controls.Add(this.DateBase);
             this.Controls.Add(this.gb_3);
             this.Controls.Add(this.Close_button);
@@ -183,6 +194,7 @@ namespace CalculationOfSeniority
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Seniority";
             this.Text = "Расчет стажа";
+            this.Load += new System.EventHandler(this.Seniority_Load);
             this.gb_1.ResumeLayout(false);
             this.gb_2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DateBase)).EndInit();
@@ -202,6 +214,7 @@ namespace CalculationOfSeniority
         private System.Windows.Forms.GroupBox gb_3;
         private System.Windows.Forms.DateTimePicker DateBegin;
         private System.Windows.Forms.DataGridView DateBase;
+        private System.Windows.Forms.Button Refresh_button;
     }
 }
 
