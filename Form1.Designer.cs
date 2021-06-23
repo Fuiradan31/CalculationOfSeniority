@@ -102,6 +102,7 @@ namespace CalculationOfSeniority
             this.Delete_button.TabIndex = 4;
             this.Delete_button.Text = "Удалить";
             this.Delete_button.UseVisualStyleBackColor = true;
+            this.Delete_button.Click += new System.EventHandler(this.Delete_button_Click);
             // 
             // Print_button
             // 
@@ -129,6 +130,7 @@ namespace CalculationOfSeniority
             this.Close_button.TabIndex = 7;
             this.Close_button.Text = "Закрыть";
             this.Close_button.UseVisualStyleBackColor = true;
+            this.Close_button.Click += new System.EventHandler(this.Close_button_Click);
             // 
             // gb_3
             // 

@@ -56,5 +56,29 @@ namespace CalculationOfSeniority
         {
             Seniority_Load(sender, e);
         }
+
+        private void Close_button_Click(object sender, EventArgs e)
+        { 
+            DialogResult result = MessageBox.Show("Вы дейсвительно хотите выйти?", "Выход", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void Delete_button_Click(object sender, EventArgs e)
+        {
+            DateBase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                DialogResult result = MessageBox.Show("Вы действительно хотите удалить эту строку?", "Удаление",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes) 
+                {
+                    cmd.CommandText = "DELETE FROM [Seniority] WHERE (DateBegin = DateBegin)";
+                    cmd.ExecuteNonQuery();
+                    Seniority_Load(sender, e);
+                }
+            
+        }
     }
 }
