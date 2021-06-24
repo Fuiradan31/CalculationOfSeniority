@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace CalculationOfSeniority
 
         private void Seniority_Load(object sender, EventArgs e)
         {
-            string sql = "select DateBegin as [Дата начала], DateEnd as [Дата окончания] from  Seniority";
+            string sql = "select ID as [Номер], DateBegin as [Дата начала], DateEnd as [Дата окончания] from  Seniority";
             SqlCommand createCommand = new SqlCommand(sql, connection);
             createCommand.ExecuteNonQuery();
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
@@ -68,17 +69,16 @@ namespace CalculationOfSeniority
 
         private void Delete_button_Click(object sender, EventArgs e)
         {
-            DateBase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-                DialogResult result = MessageBox.Show("Вы действительно хотите удалить эту строку?", "Удаление",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes) 
-                {
-                    cmd.CommandText = "DELETE FROM [Seniority] WHERE (DateBegin = DateBegin)";
-                    cmd.ExecuteNonQuery();
-                    Seniority_Load(sender, e);
-                }
-            
+            DateBase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить эту строку?", "Удаление",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                cmd.CommandText = "DELETE FROM [Seniority] where id=";
+                cmd.ExecuteNonQuery();
+                Seniority_Load(sender, e);
+            }
         }
     }
 }
