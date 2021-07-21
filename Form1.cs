@@ -42,7 +42,7 @@ namespace CalculationOfSeniority
             DataTable dt = new DataTable("Seniority"); // В скобках указываем название таблицы
             dataAdp.Fill(dt);
             DateBase.DataSource = dt.DefaultView; // Сам вывод 
-       
+
         }
         private void Add_button_Click(object sender, EventArgs e)
         {
@@ -69,13 +69,28 @@ namespace CalculationOfSeniority
 
         private void Delete_button_Click(object sender, EventArgs e)
         {
-
+            
             DateBase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DialogResult result = MessageBox.Show("Вы действительно хотите удалить эту строку?", "Удаление",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                cmd.CommandText = "DELETE FROM [Seniority] where id=";
+                cmd.CommandText = "DELETE top (1) [Seniority]";
+                cmd.ExecuteNonQuery();
+                Seniority_Load(sender, e);
+            }
+        }
+
+        private void DeleteAll_Button_Click(object sender, EventArgs e)
+        {
+            DateBase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DialogResult result = MessageBox.Show("Вы действительно хотите удалить все строки?", "Удаление",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                cmd.CommandText = "DBCC CHECKIDENT(Seniority, RESEED, 0)";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "DELETE FROM [Seniority]";
                 cmd.ExecuteNonQuery();
                 Seniority_Load(sender, e);
             }

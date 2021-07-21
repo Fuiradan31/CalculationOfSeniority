@@ -43,6 +43,7 @@ namespace CalculationOfSeniority
             this.gb_3 = new System.Windows.Forms.GroupBox();
             this.DateBase = new System.Windows.Forms.DataGridView();
             this.Refresh_button = new System.Windows.Forms.Button();
+            this.DeleteAll_Button = new System.Windows.Forms.Button();
             this.gb_1.SuspendLayout();
             this.gb_2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DateBase)).BeginInit();
@@ -143,8 +144,9 @@ namespace CalculationOfSeniority
             // 
             // DateBase
             // 
-            this.DateBase.AllowUserToOrderColumns = true;
-            this.DateBase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DateBase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DateBase.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DateBase.ColumnHeadersHeight = 29;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -163,7 +165,7 @@ namespace CalculationOfSeniority
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DateBase.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DateBase.RowHeadersWidth = 51;
+            this.DateBase.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.DateBase.RowTemplate.Height = 29;
             this.DateBase.Size = new System.Drawing.Size(600, 319);
             this.DateBase.TabIndex = 9;
@@ -178,11 +180,22 @@ namespace CalculationOfSeniority
             this.Refresh_button.UseVisualStyleBackColor = true;
             this.Refresh_button.Click += new System.EventHandler(this.Refresh_button_Click);
             // 
+            // DeleteAll_Button
+            // 
+            this.DeleteAll_Button.Location = new System.Drawing.Point(634, 174);
+            this.DeleteAll_Button.Name = "DeleteAll_Button";
+            this.DeleteAll_Button.Size = new System.Drawing.Size(148, 40);
+            this.DeleteAll_Button.TabIndex = 11;
+            this.DeleteAll_Button.Text = "Удалить всё";
+            this.DeleteAll_Button.UseVisualStyleBackColor = true;
+            this.DeleteAll_Button.Click += new System.EventHandler(this.DeleteAll_Button_Click);
+            // 
             // Seniority
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 518);
+            this.Controls.Add(this.DeleteAll_Button);
             this.Controls.Add(this.Refresh_button);
             this.Controls.Add(this.DateBase);
             this.Controls.Add(this.gb_3);
@@ -217,6 +230,7 @@ namespace CalculationOfSeniority
         private System.Windows.Forms.DateTimePicker DateBegin;
         private System.Windows.Forms.DataGridView DateBase;
         private System.Windows.Forms.Button Refresh_button;
+        private System.Windows.Forms.Button DeleteAll_Button;
     }
 }
 
