@@ -35,7 +35,7 @@ namespace CalculationOfSeniority
 
         private void Seniority_Load(object sender, EventArgs e)
         {
-            string sql = "select ID as [Номер], DateBegin as [Дата начала], DateEnd as [Дата окончания] from  Seniority";
+            string sql = "select DateBegin as [Дата начала], Volume as [Количество], DateEnd as [Дата окончания] from  Seniority";
             SqlCommand createCommand = new SqlCommand(sql, connection);
             createCommand.ExecuteNonQuery();
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
@@ -94,6 +94,12 @@ namespace CalculationOfSeniority
                 cmd.ExecuteNonQuery();
                 Seniority_Load(sender, e);
             }
+        }
+
+        private void lb_Continuous_Experience_Click(object sender, EventArgs e)
+        {
+            Label Label1 = new Label();
+            Label1.Text = "sdfsdfsdf";
         }
     }
 }
