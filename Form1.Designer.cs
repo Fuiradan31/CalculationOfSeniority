@@ -29,8 +29,8 @@ namespace CalculationOfSeniority
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gb_1 = new System.Windows.Forms.GroupBox();
             this.DateBegin = new System.Windows.Forms.DateTimePicker();
             this.gb_2 = new System.Windows.Forms.GroupBox();
@@ -41,17 +41,19 @@ namespace CalculationOfSeniority
             this.About_button = new System.Windows.Forms.Button();
             this.Close_button = new System.Windows.Forms.Button();
             this.gb_3 = new System.Windows.Forms.GroupBox();
+            this.gb_Continuous_Experience = new System.Windows.Forms.GroupBox();
+            this.lb_Continuous_Experience = new System.Windows.Forms.Label();
+            this.gb_General_Experience = new System.Windows.Forms.GroupBox();
+            this.lb_General_Experience = new System.Windows.Forms.Label();
             this.DateBase = new System.Windows.Forms.DataGridView();
             this.Refresh_button = new System.Windows.Forms.Button();
             this.DeleteAll_Button = new System.Windows.Forms.Button();
-            this.gb_General_Experience = new System.Windows.Forms.GroupBox();
-            this.gb_Continuous_Experience = new System.Windows.Forms.GroupBox();
-            this.lb_Continuous_Experience = new System.Windows.Forms.Label();
             this.gb_1.SuspendLayout();
             this.gb_2.SuspendLayout();
             this.gb_3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DateBase)).BeginInit();
             this.gb_Continuous_Experience.SuspendLayout();
+            this.gb_General_Experience.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DateBase)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_1
@@ -127,6 +129,7 @@ namespace CalculationOfSeniority
             this.About_button.TabIndex = 6;
             this.About_button.Text = "О программе";
             this.About_button.UseVisualStyleBackColor = true;
+            this.About_button.Click += new System.EventHandler(this.About_button_Click);
             // 
             // Close_button
             // 
@@ -149,29 +152,65 @@ namespace CalculationOfSeniority
             this.gb_3.TabStop = false;
             this.gb_3.Text = "Итого:";
             // 
+            // gb_Continuous_Experience
+            // 
+            this.gb_Continuous_Experience.Controls.Add(this.lb_Continuous_Experience);
+            this.gb_Continuous_Experience.Location = new System.Drawing.Point(368, 26);
+            this.gb_Continuous_Experience.Name = "gb_Continuous_Experience";
+            this.gb_Continuous_Experience.Size = new System.Drawing.Size(214, 57);
+            this.gb_Continuous_Experience.TabIndex = 1;
+            this.gb_Continuous_Experience.TabStop = false;
+            this.gb_Continuous_Experience.Text = "Неприрывный стаж";
+            // 
+            // lb_Continuous_Experience
+            // 
+            this.lb_Continuous_Experience.AutoSize = true;
+            this.lb_Continuous_Experience.Location = new System.Drawing.Point(43, 26);
+            this.lb_Continuous_Experience.Name = "lb_Continuous_Experience";
+            this.lb_Continuous_Experience.Size = new System.Drawing.Size(0, 20);
+            this.lb_Continuous_Experience.TabIndex = 1;
+            // 
+            // gb_General_Experience
+            // 
+            this.gb_General_Experience.Controls.Add(this.lb_General_Experience);
+            this.gb_General_Experience.Location = new System.Drawing.Point(16, 26);
+            this.gb_General_Experience.Name = "gb_General_Experience";
+            this.gb_General_Experience.Size = new System.Drawing.Size(214, 57);
+            this.gb_General_Experience.TabIndex = 0;
+            this.gb_General_Experience.TabStop = false;
+            this.gb_General_Experience.Text = "Общий стаж";
+            // 
+            // lb_General_Experience
+            // 
+            this.lb_General_Experience.AutoSize = true;
+            this.lb_General_Experience.Location = new System.Drawing.Point(35, 26);
+            this.lb_General_Experience.Name = "lb_General_Experience";
+            this.lb_General_Experience.Size = new System.Drawing.Size(0, 20);
+            this.lb_General_Experience.TabIndex = 0;
+            // 
             // DateBase
             // 
             this.DateBase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DateBase.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DateBase.ColumnHeadersHeight = 29;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DateBase.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DateBase.DefaultCellStyle = dataGridViewCellStyle1;
             this.DateBase.Location = new System.Drawing.Point(18, 82);
             this.DateBase.Name = "DateBase";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DateBase.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DateBase.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DateBase.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.DateBase.RowTemplate.Height = 29;
             this.DateBase.Size = new System.Drawing.Size(600, 319);
@@ -179,9 +218,9 @@ namespace CalculationOfSeniority
             // 
             // Refresh_button
             // 
-            this.Refresh_button.Location = new System.Drawing.Point(634, 26);
+            this.Refresh_button.Location = new System.Drawing.Point(634, 20);
             this.Refresh_button.Name = "Refresh_button";
-            this.Refresh_button.Size = new System.Drawing.Size(148, 40);
+            this.Refresh_button.Size = new System.Drawing.Size(148, 46);
             this.Refresh_button.TabIndex = 10;
             this.Refresh_button.Text = "Обновить";
             this.Refresh_button.UseVisualStyleBackColor = true;
@@ -196,35 +235,6 @@ namespace CalculationOfSeniority
             this.DeleteAll_Button.Text = "Удалить всё";
             this.DeleteAll_Button.UseVisualStyleBackColor = true;
             this.DeleteAll_Button.Click += new System.EventHandler(this.DeleteAll_Button_Click);
-            // 
-            // gb_General_Experience
-            // 
-            this.gb_General_Experience.Location = new System.Drawing.Point(16, 26);
-            this.gb_General_Experience.Name = "gb_General_Experience";
-            this.gb_General_Experience.Size = new System.Drawing.Size(214, 57);
-            this.gb_General_Experience.TabIndex = 0;
-            this.gb_General_Experience.TabStop = false;
-            this.gb_General_Experience.Text = "Общий стаж";
-            // 
-            // gb_Continuous_Experience
-            // 
-            this.gb_Continuous_Experience.Controls.Add(this.lb_Continuous_Experience);
-            this.gb_Continuous_Experience.Location = new System.Drawing.Point(368, 26);
-            this.gb_Continuous_Experience.Name = "gb_Continuous_Experience";
-            this.gb_Continuous_Experience.Size = new System.Drawing.Size(214, 57);
-            this.gb_Continuous_Experience.TabIndex = 1;
-            this.gb_Continuous_Experience.TabStop = false;
-            this.gb_Continuous_Experience.Text = "Неприрывный стаж";
-            // 
-            // lb_Continuous_Experience
-            // 
-            this.lb_Continuous_Experience.AutoSize = true;
-            this.lb_Continuous_Experience.Location = new System.Drawing.Point(6, 23);
-            this.lb_Continuous_Experience.Name = "lb_Continuous_Experience";
-            this.lb_Continuous_Experience.Size = new System.Drawing.Size(50, 20);
-            this.lb_Continuous_Experience.TabIndex = 0;
-            this.lb_Continuous_Experience.Text = "label1";
-            this.lb_Continuous_Experience.Click += new System.EventHandler(this.lb_Continuous_Experience_Click);
             // 
             // Seniority
             // 
@@ -249,9 +259,11 @@ namespace CalculationOfSeniority
             this.gb_1.ResumeLayout(false);
             this.gb_2.ResumeLayout(false);
             this.gb_3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DateBase)).EndInit();
             this.gb_Continuous_Experience.ResumeLayout(false);
             this.gb_Continuous_Experience.PerformLayout();
+            this.gb_General_Experience.ResumeLayout(false);
+            this.gb_General_Experience.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DateBase)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,6 +285,7 @@ namespace CalculationOfSeniority
         private System.Windows.Forms.GroupBox gb_Continuous_Experience;
         private System.Windows.Forms.GroupBox gb_General_Experience;
         private System.Windows.Forms.Label lb_Continuous_Experience;
+        private System.Windows.Forms.Label lb_General_Experience;
     }
 }
 

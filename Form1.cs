@@ -25,7 +25,7 @@ namespace CalculationOfSeniority
 
         private void CreateSqlConnection()
         {
-            string conStr = @"Data Source=SERGEEV\nikita;Initial Catalog=master;User Id = sa; Password = 123";
+            string conStr = @"Data Source=SERGEEV\nikita; Initial Catalog=master; User Id = sa; Password = 123";
             connection = new SqlConnection(conStr);
             connection.Open();
             cmd = new SqlCommand();
@@ -39,16 +39,16 @@ namespace CalculationOfSeniority
             SqlCommand createCommand = new SqlCommand(sql, connection);
             createCommand.ExecuteNonQuery();
             SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
-            DataTable dt = new DataTable("Seniority"); // В скобках указываем название таблицы
+            DataTable dt = new DataTable("Seniority"); //В скобках указываем название таблицы
             dataAdp.Fill(dt);
-            DateBase.DataSource = dt.DefaultView; // Сам вывод 
+            DateBase.DataSource = dt.DefaultView; //Сам вывод 
 
         }
         private void Add_button_Click(object sender, EventArgs e)
         {
             cmd.CommandText = $"INSERT into [Seniority] (DateBegin, DateEnd) VALUES " +
             $"(convert(date,'{DateBegin.Value.ToShortDateString()}',104), " +
-            $"convert(date,'{DateEnd.Value.ToShortDateString()}',104))";
+            $"convert(date,'{DateEnd.Value.ToShortDateString()}', 104))";
             cmd.ExecuteNonQuery();
             Seniority_Load(sender, e);
         }
@@ -96,10 +96,11 @@ namespace CalculationOfSeniority
             }
         }
 
-        private void lb_Continuous_Experience_Click(object sender, EventArgs e)
+        private void About_button_Click(object sender, EventArgs e)
         {
-            Label Label1 = new Label();
-            Label1.Text = "sdfsdfsdf";
+            DateBase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DialogResult result = MessageBox.Show("Программа считывающая стаж работы V.1.0.0.0.0.0.0.0.0.0.0.", "О программе",
+            MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
 }
