@@ -167,8 +167,9 @@ namespace CalculationOfSeniority
             this.lb_Continuous_Experience.AutoSize = true;
             this.lb_Continuous_Experience.Location = new System.Drawing.Point(43, 26);
             this.lb_Continuous_Experience.Name = "lb_Continuous_Experience";
-            this.lb_Continuous_Experience.Size = new System.Drawing.Size(0, 20);
+            this.lb_Continuous_Experience.Size = new System.Drawing.Size(29, 20);
             this.lb_Continuous_Experience.TabIndex = 1;
+            this.lb_Continuous_Experience.Text = "sdf";
             // 
             // gb_General_Experience
             // 
@@ -183,10 +184,11 @@ namespace CalculationOfSeniority
             // lb_General_Experience
             // 
             this.lb_General_Experience.AutoSize = true;
-            this.lb_General_Experience.Location = new System.Drawing.Point(35, 26);
+            this.lb_General_Experience.Location = new System.Drawing.Point(40, 26);
             this.lb_General_Experience.Name = "lb_General_Experience";
-            this.lb_General_Experience.Size = new System.Drawing.Size(0, 20);
+            this.lb_General_Experience.Size = new System.Drawing.Size(29, 20);
             this.lb_General_Experience.TabIndex = 0;
+            this.lb_General_Experience.Text = "sdf";
             // 
             // DateBase
             // 

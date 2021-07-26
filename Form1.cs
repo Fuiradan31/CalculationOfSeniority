@@ -8,7 +8,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+using System.Globalization;
+
 
 namespace CalculationOfSeniority
 {
@@ -16,7 +19,7 @@ namespace CalculationOfSeniority
     {
         SqlConnection connection;
         SqlCommand cmd;
-
+        
         public Seniority()
         {
             CreateSqlConnection();
@@ -59,8 +62,8 @@ namespace CalculationOfSeniority
         }
 
         private void Close_button_Click(object sender, EventArgs e)
-        { 
-            DialogResult result = MessageBox.Show("Вы дейсвительно хотите выйти?", "Выход", 
+        {
+            DialogResult result = MessageBox.Show("Вы дейсвительно хотите выйти?", "Выход",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -69,8 +72,6 @@ namespace CalculationOfSeniority
 
         private void Delete_button_Click(object sender, EventArgs e)
         {
-            
-            DateBase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DialogResult result = MessageBox.Show("Вы действительно хотите удалить эту строку?", "Удаление",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
@@ -83,7 +84,6 @@ namespace CalculationOfSeniority
 
         private void DeleteAll_Button_Click(object sender, EventArgs e)
         {
-            DateBase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DialogResult result = MessageBox.Show("Вы действительно хотите удалить все строки?", "Удаление",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
@@ -98,8 +98,7 @@ namespace CalculationOfSeniority
 
         private void About_button_Click(object sender, EventArgs e)
         {
-            DateBase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DialogResult result = MessageBox.Show("Программа считывающая стаж работы V.1.0.0.0.0.0.0.0.0.0.0.", "О программе",
+            MessageBox.Show("Программа считывающая стаж работы \nВерсия программа: V.1.0.0.0.0.0.0.0.0.0.0.", "О программе",
             MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
