@@ -170,6 +170,7 @@ namespace CalculationOfSeniority
             this.lb_Continuous_Experience.Size = new System.Drawing.Size(29, 20);
             this.lb_Continuous_Experience.TabIndex = 1;
             this.lb_Continuous_Experience.Text = "sdf";
+            this.lb_Continuous_Experience.Click += new System.EventHandler(this.lb_Continuous_Experience_Click);
             // 
             // gb_General_Experience
             // 

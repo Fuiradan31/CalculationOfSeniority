@@ -54,6 +54,8 @@ namespace CalculationOfSeniority
             $"convert(date,'{DateEnd.Value.ToShortDateString()}', 104))";
             cmd.ExecuteNonQuery();
             Seniority_Load(sender, e);
+            lb_Continuous_Experience_Click(sender, e);
+
         }
 
         private void Refresh_button_Click(object sender, EventArgs e)
@@ -100,6 +102,23 @@ namespace CalculationOfSeniority
         {
             MessageBox.Show("Программа считывающая стаж работы \nВерсия программа: V.1.0.0.0.0.0.0.0.0.0.0.", "О программе",
             MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void lb_Continuous_Experience_Click(object sender, EventArgs e)
+        {
+            //CreateSqlConnection();
+            //Seniority_Load(sender, e);
+            //uint DateBegin;
+            //uint DateEnd;
+
+            //uint Day = DateEnd - DateBegin;
+
+            //uint day = Day % 30;
+            //uint month = (Day % 365) / 30;
+            //uint year = Day / 365;
+            //lb_Continuous_Experience.Text = string.Format($"Day: {day} Month: {month} Year: {year} "/*, day, month, year*/);
+
+            // Как обратиться именно к таблице DateBegin и DateEnd которые созданы в базе
         }
     }
 }
