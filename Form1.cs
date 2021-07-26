@@ -54,7 +54,7 @@ namespace CalculationOfSeniority
             $"convert(date,'{DateEnd.Value.ToShortDateString()}', 104))";
             cmd.ExecuteNonQuery();
             Seniority_Load(sender, e);
-            lb_Continuous_Experience_Click(sender, e);
+            lb_General_Experience_Click(sender, e);
 
         }
 
@@ -104,21 +104,19 @@ namespace CalculationOfSeniority
             MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
-        private void lb_Continuous_Experience_Click(object sender, EventArgs e)
+        private void lb_General_Experience_Click(object sender, EventArgs e)
         {
-            //CreateSqlConnection();
-            //Seniority_Load(sender, e);
-            //uint DateBegin;
-            //uint DateEnd;
+            DateTime DT_DateBegin = new DateTime();
+            DateTime DT_DateEnd = new DateTime();
+            DT_DateBegin = DateBegin.Value;
+            DT_DateEnd = DateEnd.Value;
 
-            //uint Day = DateEnd - DateBegin;
+            int Day = (DT_DateEnd - DT_DateBegin).Days;
 
-            //uint day = Day % 30;
-            //uint month = (Day % 365) / 30;
-            //uint year = Day / 365;
-            //lb_Continuous_Experience.Text = string.Format($"Day: {day} Month: {month} Year: {year} "/*, day, month, year*/);
-
-            // Как обратиться именно к таблице DateBegin и DateEnd которые созданы в базе
+            int day = Day % 30; // Разница в датах ровно 1 год, но поевляется еще 5 дней - решить проблему
+            int month = (Day % 365) / 30;
+            int year = Day / 365;
+            lb_General_Experience.Text = string.Format($"Day: {day} Month: {month} Year: {year} ", day, month, year);
         }
     }
 }
