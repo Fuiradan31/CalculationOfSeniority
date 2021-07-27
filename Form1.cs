@@ -19,6 +19,7 @@ namespace CalculationOfSeniority
     {
         SqlConnection connection;
         SqlCommand cmd;
+        DateTime Data;
         
         public Seniority()
         {
@@ -45,7 +46,6 @@ namespace CalculationOfSeniority
             DataTable dt = new DataTable("Seniority"); //В скобках указываем название таблицы
             dataAdp.Fill(dt);
             DateBase.DataSource = dt.DefaultView; //Сам вывод 
-
         }
         private void Add_button_Click(object sender, EventArgs e)
         {
@@ -55,7 +55,6 @@ namespace CalculationOfSeniority
             cmd.ExecuteNonQuery();
             Seniority_Load(sender, e);
             lb_General_Experience_Click(sender, e);
-
         }
 
         private void Refresh_button_Click(object sender, EventArgs e)
@@ -100,7 +99,7 @@ namespace CalculationOfSeniority
 
         private void About_button_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Программа считывающая стаж работы \nВерсия программа: V.1.0.0.0.0.0.0.0.0.0.0.", "О программе",
+            MessageBox.Show("\aПрограмма считывающая стаж работы \nВерсия программа: V.1.0.0.0.0.0.0.0.0.0.0.", "О программе",
             MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
@@ -108,15 +107,15 @@ namespace CalculationOfSeniority
         {
             DateTime DT_DateBegin = new DateTime();
             DateTime DT_DateEnd = new DateTime();
+
             DT_DateBegin = DateBegin.Value;
             DT_DateEnd = DateEnd.Value;
 
-            int Day = (DT_DateEnd - DT_DateBegin).Days;
+            DateTime Day = new DateTime((DT_DateEnd - DT_DateBegin).Ticks);
 
-            int day = Day % 30; // Разница в датах ровно 1 год, но поевляется еще 5 дней - решить проблему
-            int month = (Day % 365) / 30;
-            int year = Day / 365;
-            lb_General_Experience.Text = string.Format($"Day: {day} Month: {month} Year: {year} ", day, month, year);
+            lb_General_Experience.Text = string.Format("{0} л.(г.)/{1} мес./{2} дн.", +
+            Day.Year - 1, Day.Month - 1, Day.Day - 1);
         }
+
     }
 }
